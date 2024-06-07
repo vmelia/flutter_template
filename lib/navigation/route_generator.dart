@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'view.dart';
+import '../view.dart';
 
 class RouteGenerator {
   static Route<MaterialPageRoute<dynamic>> generateRoute(RouteSettings routeSettings) {
