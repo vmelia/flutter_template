@@ -4,7 +4,6 @@ import 'package:get_it/get_it.dart';
 
 import '../../contracts.dart';
 import '../../navigation.dart';
-import '../../navigation/route_generator.dart';
 import '../../state.dart';
 import '../../view.dart';
 
