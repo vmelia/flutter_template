@@ -12,26 +12,37 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MainScaffold(
+      title: 'Home Page',
+      body: _PageBloc(),
+    );
+  }
+}
+
+class _PageBloc extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     final mainCubit = GetIt.I<MainCubit>()..initialize();
 
     return BlocProvider(
       create: (BuildContext context) => mainCubit,
       child: BlocBuilder<MainCubit, MainState>(
         bloc: mainCubit,
-        builder: (context, state) => _HomePageView(state: state),
+        builder: (context, state) => _PageBody(state: state),
       ),
     );
   }
 }
 
-class _HomePageView extends StatelessWidget {
-  const _HomePageView({required this.state});
+class _PageBody extends StatelessWidget {
+  const _PageBody({required this.state});
   final MainState state;
 
   @override
   Widget build(BuildContext context) {
     final mainCubit = GetIt.I<MainCubit>();
     final appTheme = GetIt.I<AppTheme>();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

@@ -19,13 +19,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Template', style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.orange,
-        ),
-        body: const HomePage(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        primaryColor: Colors.purple,
       ),
+      home: const HomePage(),
       onGenerateRoute: RouteGenerator.generateRoute,
       initialRoute: NavigationRoute.homePage,
       navigatorKey: PageNavigator.navigatorKey,
