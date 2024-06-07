@@ -37,19 +37,23 @@ class _HomePageView extends StatelessWidget {
       children: [
         TextWithBorder(
           text: state.output,
-          textStyle: appTheme.mainTextStyle.textStyle,
-          colour: Colors.red,
+          style: appTheme.textWithBorderStyle,
         ),
         FloatingActionButton(
+          heroTag: 'calculating.',
           onPressed: () => mainCubit.doStuff(DateTime.now()),
           child: const Icon(
-            Icons.umbrella,
-            color: Colors.white,
+            Icons.calculate,
+            color: Colors.blue,
           ),
         ),
-        ElevatedButton(
+        FloatingActionButton(
+          heroTag: 'navigate',
           onPressed: () => PageNavigator.navigateTo(NavigationRoute.secondPage),
-          child: const Text('Second Page'),
+          child: const Icon(
+            Icons.travel_explore,
+            color: Colors.blue,
+          ),
         ),
       ],
     );

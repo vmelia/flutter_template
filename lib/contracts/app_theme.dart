@@ -1,6 +1,10 @@
-import 'app_text_style.dart';
+import 'package:flutter/material.dart';
+
+import 'text_with_border_style.dart';
 
 abstract class AppTheme {
-  AppTextStyle get mainTextStyle;
-  AppTextStyle get titleTextStyle;
+  TextStyle get mainTextStyle;
+  TextStyle get titleTextStyle;
+
+  TextWithBorderStyle get textWithBorderStyle;
 }
