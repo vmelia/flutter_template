@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../contracts.dart';
+import '../../navigation.dart';
 import '../../navigation/route_generator.dart';
 import '../../state.dart';
 import '../../view.dart';
@@ -31,7 +32,6 @@ class _HomePageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mainCubit = GetIt.I<MainCubit>();
-    final navigationService = GetIt.I<NavigationService>();
     final appTheme = GetIt.I<AppTheme>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,7 +49,7 @@ class _HomePageView extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-          onPressed: () => navigationService.navigateTo(NavigationRoute.secondPage),
+          onPressed: () => PageNavigator.navigateTo(NavigationRoute.secondPage),
           child: const Text('Second Page'),
         ),
       ],

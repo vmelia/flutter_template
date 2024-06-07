@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 
-import 'contracts.dart';
 import 'navigation.dart';
 import 'navigation/route_generator.dart';
 import 'services.dart';
@@ -9,7 +7,6 @@ import 'state.dart';
 import 'view.dart';
 
 void main() {
-  configureNavigation();
   configureServices();
   configureState();
   configureView();
@@ -22,8 +19,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navigationService = GetIt.I<NavigationService>();
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -34,7 +29,7 @@ class MainApp extends StatelessWidget {
       ),
       onGenerateRoute: RouteGenerator.generateRoute,
       initialRoute: NavigationRoute.homePage,
-      navigatorKey: navigationService.navigatorKey,
+      navigatorKey: PageNavigator.navigatorKey,
     );
   }
 }
