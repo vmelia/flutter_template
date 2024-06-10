@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../navigation.dart';
 import '../view.dart';
 
 class RouteGenerator {
@@ -20,4 +19,9 @@ class RouteGenerator {
         );
     }
   }
+}
+
+class NavigationRoute {
+  static const String homePage = '/';
+  static const String secondPage = '/secondPage';
 }
