@@ -21,7 +21,6 @@ class RouteGenerator {
   }
 }
 
-//ToDo: Move to 'types'?
 class NavigationRoute {
   static const String homePage = '/';
   static const String secondPage = '/secondPage';

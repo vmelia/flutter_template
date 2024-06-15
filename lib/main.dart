@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
+import 'contracts.dart';
 import 'services.dart';
 import 'state.dart';
 import 'view.dart';
@@ -31,7 +32,7 @@ class MainApp extends StatelessWidget {
         home: const HomePage(),
         onGenerateRoute: RouteGenerator.generateRoute,
         initialRoute: NavigationRoute.homePage,
-        navigatorKey: NavigationServiceImpl.navigatorKey,
+        navigatorKey: NavigationService.navigatorKey,
       ),
     );
   }
