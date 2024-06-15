@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../contracts.dart';
-import '../../navigation.dart';
+import '../../services.dart';
 import '../../state.dart';
 import '../../view.dart';
 
@@ -41,6 +41,7 @@ class _PageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mainCubit = GetIt.I<MainCubit>();
+    final navigationCubit = GetIt.I<NavigationCubit>();
     final appTheme = GetIt.I<AppTheme>();
 
     return Column(
@@ -60,7 +61,7 @@ class _PageBody extends StatelessWidget {
         ),
         FloatingActionButton(
           heroTag: 'navigate',
-          onPressed: () => PageNavigator.navigateTo(NavigationRoute.secondPage),
+          onPressed: () => navigationCubit.navigateTo(NavigationRoute.secondPage),
           child: const Icon(
             Icons.travel_explore,
             color: Colors.blue,

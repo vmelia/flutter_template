@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
-import '../../navigation.dart';
+import '../../state.dart';
 import '../../view.dart';
 
 class SecondPage extends StatelessWidget {
@@ -18,9 +19,10 @@ class SecondPage extends StatelessWidget {
 class _PageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final navigationCubit = GetIt.I<NavigationCubit>();
     return Center(
       child: ElevatedButton(
-        onPressed: () => PageNavigator.goBack(),
+        onPressed: () => navigationCubit.goBack(),
         child: const Text('Home'),
       ),
     );
